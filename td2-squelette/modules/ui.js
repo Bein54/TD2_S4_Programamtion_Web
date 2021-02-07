@@ -5,16 +5,18 @@ function displayProduct(p) {
     div.classList.add("product");
 
     let div_photo=document.createElement("div");
-    div.classList.add("photo");
+    div_photo.classList.add("photo");
 
     let span_photo=document.createElement("span");
-    span_photo.classList.add("mdi mdi-camera");
+    span_photo.classList.add("mdi");
+    span_photo.classList.add("mdi-camera");
 
     let a_photo=document.createElement("a");
     a_photo.classList.add("product-add2cart");
 
     let span_a=document.createElement("span");
-    span_a.classList.add("mdi mdi-cart");
+    span_a.classList.add("mdi");
+    span_a.classList.add("mdi-cart");
 
     a_photo.appendChild(span_a);
     div_photo.appendChild(span_photo);
@@ -49,6 +51,8 @@ function displayProduct(p) {
 
     div.appendChild(div_photo);
     div.appendChild(div_details);
+
+    product_list.appendChild(div);
 };
 
 function buildProductsList(tab_p){
