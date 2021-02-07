@@ -2,7 +2,7 @@ class Produit {
     constructor (ref, price, description) {
         this.ref = ref;
         this.price = price;
-        this.descritpion = description;
+        this.description = description;
     }
 }
 
