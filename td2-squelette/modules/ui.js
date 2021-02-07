@@ -1,4 +1,4 @@
-const displayProduct = (function(p) {
+function displayProduct(p) {
     let product_list=document.getElementById("product-list");
     
     let div=document.createElement("div");
@@ -49,5 +49,14 @@ const displayProduct = (function(p) {
 
     div.appendChild(div_photo);
     div.appendChild(div_details);
+};
 
-});
+function buildProductsList(tab_p){
+    tab_p.forEach(element => {
+        displayProduct(element);
+    });
+}
+
+export default {
+    build : buildProductsList
+}
