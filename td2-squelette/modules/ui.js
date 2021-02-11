@@ -1,5 +1,5 @@
 function displayProduct(p) {
-    let product_list=document.getElementById("product-list");
+    /*let product_list=document.getElementById("product-list");
     
     let div=document.createElement("div");
     div.classList.add("product");
@@ -52,15 +52,38 @@ function displayProduct(p) {
     div.appendChild(div_photo);
     div.appendChild(div_details);
 
-    product_list.appendChild(div);
+    product_list.appendChild(div);*/
+
+
+    let productDom = document.createElement("div");
+
+    productDom.innerHTML =`
+<div class="photo">
+    <span class="mdi mdi-camera"></span>
+    <a class="product-add2cart">
+        <span class="mdi mdi-cart"></span>
+    </a>
+</div>
+<div class="details">
+  <div class="details-top">
+    <strong class="bigger" data-type="ref">${p.ref}</strong>
+    <strong class="bigger" data-type="price">${p.price}NBSP€</strong>
+  </div>
+  <div class="details-description">
+    ${p.description}
+  </div>
+</div> `;
+    productDom.classList.add('product');
+    return productDom;
 };
 
-function buildProductsList(tab_p){
-    tab_p.forEach(element => {
-        displayProduct(element);
+const buildProductsList= function (products){
+    let listProduits = document.getElementById('product-list');
+    products.forEach((product) => {
+        listProduits.appendChild(displayProduct(product));
     });
 }
 
 export default {
-    build : buildProductsList
+    buildProductsList
 }
