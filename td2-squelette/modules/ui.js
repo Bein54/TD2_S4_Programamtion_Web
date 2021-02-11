@@ -67,7 +67,7 @@ function displayProduct(p) {
 <div class="details">
   <div class="details-top">
     <strong class="bigger" data-type="ref">${p.ref}</strong>
-    <strong class="bigger" data-type="price">${p.price}NBSP€</strong>
+    <strong class="bigger" data-type="price">${p.price}€</strong>
   </div>
   <div class="details-description">
     ${p.description}
