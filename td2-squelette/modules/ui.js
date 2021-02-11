@@ -83,6 +83,10 @@ function displayProduct(p) {
     return productDom;
 };
 
+const displayCart = function() {
+
+}
+
 const buildProductsList= function (produits){
     let listProduits = document.getElementById('product-list');
     listProduits.innerHTML="";
