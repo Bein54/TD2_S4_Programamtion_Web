@@ -79,6 +79,7 @@ function displayProduct(p) {
 
 const buildProductsList= function (produits){
     let listProduits = document.getElementById('product-list');
+    listProduits.innerHTML="";
     produits.forEach((product) => {
         listProduits.appendChild(displayProduct(product));
     });
