@@ -11,9 +11,9 @@ let products = [
     new Produit("c", 3, "produit3")
 ];
 
-function search(tab, keywords) {
-    return tab.filter(function(ref) {
-        return ref === keywords;
+function search(keywords) {
+    return products.filter(function(elt) {
+        return elt.ref === keywords;
     });
 }
 

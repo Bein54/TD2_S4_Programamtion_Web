@@ -9,7 +9,7 @@ const init=function() {
     recherche.addEventListener('keyup', (e) => {
         if(e.key === 'Enter') {
             ui.buildProductsList(recherche.value.trim() !== ""
-            ? prod.search(prod.products, recherche.value)
+            ? prod.search(recherche.value)
                 : prod.products)
         }
     })
