@@ -17,5 +17,5 @@ function search(keywords) {
 
 export default {
     products,
-    search : search
+    search
 };
