@@ -12,7 +12,7 @@ let products = [
 ];
 
 function search(keywords) {
-    products.filter(e => e.description.includes(keywords) || e.ref.includes(keywords));
+    return products.filter(e => e.description.includes(keywords) || e.ref.includes(keywords));
 }
 
 export default {

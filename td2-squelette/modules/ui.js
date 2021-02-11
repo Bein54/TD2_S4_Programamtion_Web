@@ -77,9 +77,9 @@ function displayProduct(p) {
     return productDom;
 };
 
-const buildProductsList= function (products){
+const buildProductsList= function (produits){
     let listProduits = document.getElementById('product-list');
-    products.forEach((product) => {
+    produits.forEach((product) => {
         listProduits.appendChild(displayProduct(product));
     });
 }
