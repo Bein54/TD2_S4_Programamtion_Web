@@ -7,5 +7,5 @@ function addToCart(produit){
 }
 
 export default {
-    addToCart : addToCart
+    addToCart
 }
