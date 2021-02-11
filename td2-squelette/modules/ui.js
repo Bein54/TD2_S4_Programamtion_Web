@@ -76,13 +76,10 @@ function displayProduct(p) {
   </div>
 </div> `;
     productDom.classList.add('product');
-    let bouton = productDom.getElementsByTagName("products-wrapper>a");
-    console.log(bouton);
-    bouton.forEach((elt) => {
-        elt.addEventListener('click', function(e) {
+    productDom.querySelector(".product-add2cart")
+        .addEventListener('click', function(e) {
             cart.addToCart(p);
         });
-    });
     return productDom;
 };
 
