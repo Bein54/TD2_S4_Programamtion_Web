@@ -8,6 +8,11 @@ const init=function() {
 
     recherche.addEventListener('keyup', (e) => {
         if(e.key === 'Enter') {
+            /*let q = document.getElementById("product-list")
+            let cn = q.childNodes;
+            cn.forEach((product) => {
+                q.removeChild(product);
+            });*/
             console.log(recherche.value.trim())
             ui.buildProductsList(recherche.value.trim() !== ""
             ? prod.search(recherche.value)
