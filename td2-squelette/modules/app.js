@@ -3,13 +3,14 @@ import ui from "./ui.js";
 
 const init=function() {
     const recherche = document.querySelector("#product-search");
-    console.log('app.init : ' + prod.product);
+    console.log('app.init : ' + prod.products);
     ui.buildProductsList(prod.products);
 
     recherche.addEventListener('keyup', (e) => {
         if(e.key === 'Enter') {
+            console.log(recherche.value.trim())
             ui.buildProductsList(recherche.value.trim() !== ""
-            ? prod.search(prod.products, recherche.value)
+            ? prod.search(recherche.value)
                 : prod.products)
         }
     })
