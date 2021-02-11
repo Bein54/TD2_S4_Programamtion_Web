@@ -1,3 +1,5 @@
+import cart from "./cart.js";
+
 function displayProduct(p) {
     /*let product_list=document.getElementById("product-list");
     
@@ -74,6 +76,13 @@ function displayProduct(p) {
   </div>
 </div> `;
     productDom.classList.add('product');
+    let bouton = productDom.getElementsByTagName("products-wrapper>a");
+    console.log(bouton);
+    bouton.forEach((elt) => {
+        elt.addEventListener('click', function(e) {
+            cart.addToCart(p);
+        });
+    });
     return productDom;
 };
 
