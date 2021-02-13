@@ -19,6 +19,14 @@ const init=function() {
         cart.emptyCard();
         ui.displayCart();
     });
+
+    const ajoutPanier=document.querySelectorAll(".product-add2cart");
+    ajoutPanier.forEach(ev=>{
+        ev.addEventListener('click', function(e) {
+            cart.addToCart(p);
+            ui.displayCart();
+        });
+    });
 }
 
 export default{
