@@ -1,19 +1,24 @@
 import prod from "./products.js";
 import ui from "./ui.js";
+import cart from "./cart.js";
 
 const init=function() {
     const recherche = document.querySelector("#product-search");
-    console.log('app.init : ' + prod.products);
     ui.buildProductsList(prod.products);
 
     recherche.addEventListener('keyup', (e) => {
         if(e.key === 'Enter') {
-            console.log(recherche.value.trim())
             ui.buildProductsList(recherche.value.trim() !== ""
             ? prod.search(recherche.value)
                 : prod.products)
         }
-    })
+    });
+
+    const viderPanier=document.getElementById("empty-cart");
+    viderPanier.addEventListener('click',(e) => {
+        cart.emptyCard();
+        ui.displayCart();
+    });
 }
 
 export default{

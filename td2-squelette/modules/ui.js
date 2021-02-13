@@ -114,5 +114,6 @@ const buildProductsList= function (produits){
 }
 
 export default {
-    buildProductsList
+    buildProductsList,
+    displayCart
 }
