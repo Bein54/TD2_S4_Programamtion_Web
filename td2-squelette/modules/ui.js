@@ -79,13 +79,31 @@ function displayProduct(p) {
     productDom.querySelector(".product-add2cart")
         .addEventListener('click', function(e) {
             cart.addToCart(p);
+            displayCart();
         });
     return productDom;
 };
 
 const displayCart = function() {
+    document.getElementById("cart-content")
+        .innerHTML=cart.getPanier()
+        .map(productInCart => {
+            return `<tr>
+            <td data-type="ref">${productInCart.product.ref}</td>
+            <td data-type="qte">${productInCart.qty}</td>
+            <td data-type="prix">${productInCart.product.price}</td>
+            </tr>`;
+        })
+            .reduce((productTable, productRow) => productTable + productRow,'');
 
+    let total=document.getElementById("cart-total");
+    total.innerText=cart.genericCalc((acc, prod)=> acc+prod.product.price*prod.qty)+"€";
+
+    let quantite=document.getElementById("total-products");
+    quantite.innerText=cart.genericCalc((acc, product)=> acc+product.qty);
 }
+
+
 
 const buildProductsList= function (produits){
     let listProduits = document.getElementById('product-list');
