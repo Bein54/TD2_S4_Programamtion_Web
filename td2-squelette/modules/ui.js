@@ -61,7 +61,9 @@ function displayProduct(p) {
 
     productDom.innerHTML =`
 <div class="photo">
-    <span class="mdi mdi-camera"></span>
+    <div>   
+    <img class="img" src="${p.img}" width="250px" height="250px">
+    </div>
     <a class="product-add2cart">
         <span class="mdi mdi-cart"></span>
     </a>
