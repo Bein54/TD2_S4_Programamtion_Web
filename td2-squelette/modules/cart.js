@@ -6,6 +6,7 @@ function addToCart(produit){
         panier.push({product : produit, qty : 1});
     }
     else prod.qty++;
+    localStorage.setItem('panier',JSON.stringify(panier));
 }
 
 function getPanier(){return panier}
@@ -14,7 +15,10 @@ function genericCalc(f){
     return panier.reduce(f,0)
 }
 
-function emptyCard(){panier=[]}
+function emptyCard(){
+    panier=[];
+    localStorage.setItem('panier',JSON.stringify(panier));
+}
 
 export default {
     addToCart,

@@ -25,6 +25,7 @@ const init=function() {
         ev.addEventListener('click', function(e) {
             cart.addToCart(p);
             ui.displayCart();
+            console.log(cart.getPanier())
         });
     });
 }
