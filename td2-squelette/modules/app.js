@@ -23,7 +23,7 @@ const init=function() {
     const ajoutPanier=document.querySelectorAll(".product-add2cart");
     ajoutPanier.forEach(ev=>{
         ev.addEventListener('click', function(e) {
-            cart.addToCart(p);
+            cart.addToCart(ev.target);
             ui.displayCart();
             console.log(cart.getPanier())
         });
